@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var finished = false;
+			var colors = ["red", "green", "blue"];
+			var target_index;
+
+			function do_game(){
+				target_index = Math.random();
+				target_index *= colors.length;
+				target_index = Math.floor(target_index);
+				alert("The target color is:" + colors[target_index]);
+				
+				while(!finished){
+					var guess_input = prompt("Take your guess. The list of possible colors is: " + colors);
+					if (guess_input === colors[target_index]){
+						finished = true;
+					}
+				}
+			}
+
+		</script>
+	</head>
+
+	<body onload="do_game()">
+	</body>
+</html>
